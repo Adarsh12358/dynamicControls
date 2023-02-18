@@ -1,0 +1,27 @@
+﻿<Window x:Class="dynamicControls.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:dynamicControls"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+
+    <Grid>
+        <StackPanel>
+            <Button Command="{Binding AddNewRowCommand}">+</Button>
+            <ItemsControl ItemsSource="{Binding SpecificationsList}">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate DataType="{x:Type local:Specification}">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="{Binding SpecId}" Width="100" Margin="5"></TextBlock>
+                            <Button Command="{Binding RemoveLastCommand}" CommandParameter="{Binding SpecId}">Remove Row</Button>
+                            <TextBox Text="{Binding Name,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Width="100" Margin="5"></TextBox>
+                            <TextBox Text="{Binding Value,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Width="200"  Margin="5"></TextBox>
+                        </StackPanel>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </StackPanel>
+    </Grid>
+</Window>
