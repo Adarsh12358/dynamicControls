@@ -9,6 +9,7 @@
 
     <Grid>
         <StackPanel>
+            <Label>sjakdfjkl jdks kadkfks asjdfj sklajdf </Label>
             <Button Command="{Binding AddNewRowCommand}">+</Button>
             <ItemsControl ItemsSource="{Binding SpecificationsList}">
                 <ItemsControl.ItemTemplate>

@@ -13,6 +13,9 @@ namespace dynamicControls
 
         public void OnPropertyChanged(string propName)
         {
+            // /sad/f /asdf/ 
+
+            ///asd fsa/f 
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propName));
         }
     }
