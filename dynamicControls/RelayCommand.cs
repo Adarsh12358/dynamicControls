@@ -12,6 +12,9 @@ namespace dynamicControls
         private Action<object> execute;
         private Func<object, bool> canExecute;
 
+
+        private string asdf;       
+
         public event EventHandler CanExecuteChanged
         {
             add { CommandManager.RequerySuggested += value; }
